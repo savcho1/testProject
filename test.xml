@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parallel Tests" parallel="tests" thread-count="2" verbose="3">
+
+    <test name="Chrome Tests" parallel="methods" thread-count="2">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name = "exampletests.LoginTest" />
+        </classes>
+    </test> <!-- First Test -->
+
+    <test name="FF" parallel="methods" thread-count="2">
+        <parameter name="browser" value="ff"/>
+        <classes>
+            <class name = "exampletests.LoginTest" />
+        </classes>
+    </test> <!-- Second Test -->
+</suite>
