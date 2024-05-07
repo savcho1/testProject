@@ -37,7 +37,7 @@ public class BaseTest {
 //            WebDriverManager.firefoxdriver().setup();
 //            driver.set(new FirefoxDriver());
             FirefoxOptions options = new FirefoxOptions();
-            System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+            options.setBinary("/usr/local/bin/geckodriver");
             driver.set(new FirefoxDriver(options));
         }
         else {
