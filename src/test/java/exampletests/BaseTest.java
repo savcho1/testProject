@@ -3,7 +3,9 @@ package exampletests;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -24,12 +26,19 @@ public class BaseTest {
     @Parameters(value= {"browser"})
     public void setUpBrowser(String browser){
         if(browser.equals("chrome")){
-            WebDriverManager.chromedriver().setup();
-            driver.set(new ChromeDriver());
+            ChromeOptions options = new ChromeOptions();
+            options.setBinary("/usr/local/bin/chromedriver");
+            driver.set(new ChromeDriver(options));
+
+            //WebDriverManager.chromedriver().setup();
+            //driver.set(new ChromeDriver());
         }
         else if(browser.equals("ff")){
-            WebDriverManager.firefoxdriver().setup();
-            driver.set(new FirefoxDriver());
+//            WebDriverManager.firefoxdriver().setup();
+//            driver.set(new FirefoxDriver());
+            FirefoxOptions options = new FirefoxOptions();
+            System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+            driver.set(new FirefoxDriver(options));
         }
         else {
             System.out.println("No browsers set up");
