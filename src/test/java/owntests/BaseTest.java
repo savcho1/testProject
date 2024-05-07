@@ -10,9 +10,9 @@ public class BaseTest extends BaseClass {
 
     static Properties properties = readPropertyFile();
 
-   @BeforeMethod
-    public void openPage() {
-        System.out.println("before");
-        open(properties.getProperty("baseUrl"));
-    }
+//   @BeforeMethod
+//    public void openPage() {
+//        System.out.println("before");
+//        open(properties.getProperty("baseUrl"));
+//    }
 }
