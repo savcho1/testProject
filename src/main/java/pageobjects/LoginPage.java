@@ -11,9 +11,9 @@ public class LoginPage extends BasePage {
 
     //page locators
 
-    private By emailId = By.id("username");
-    private By password = By.id("password");
-    private By loginButton = By.id("loginBtn");
+    private final By emailId = By.id("username");
+    private final By password = By.id("password");
+    private final By loginButton = By.id("loginBtn");
 
     //getters
     public WebElement getPassword() {
