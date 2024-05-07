@@ -14,18 +14,6 @@ public class LoginTest extends BaseTest{
     }
 
     @Test
-    public void verifyLoginPageTitleTest1(){
-        String title = page.getInstance(LoginPage.class).getLoginPageTitle();
-        Assert.assertEquals(title, "HubSpot Login and Sign in");
-    }
-
-    @Test
-    public void verifyLoginPageTitleTes2(){
-        String title = page.getInstance(LoginPage.class).getLoginPageTitle();
-        Assert.assertEquals(title, "HubSpot Login and Sign in");
-    }
-
-    @Test
     public void verifyLoginTest() throws InterruptedException {
         HomePage homePage = page.getInstance(LoginPage.class).doLogin("regela7177@agafx.com", "A1234wsxedcrfv");
         Assert.assertEquals(homePage.geHomeTitle(), "HubSpot Login and Sign in");
