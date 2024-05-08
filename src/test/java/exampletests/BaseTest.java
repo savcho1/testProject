@@ -30,7 +30,7 @@ public class BaseTest {
         if(browser.equals("chrome")){
             ChromeOptions options = new ChromeOptions();
           //  options.setBinary("/usr/local/bin/chromedriver");
-            options.setBinary("/src/main/resources/chromedriver");
+            options.setBinary("/src/main/resources/drivers/chromedriver");
             driver.set(new ChromeDriver(options));
 //            WebDriverManager.chromedriver().setup();
 //            driver.set(new ChromeDriver());
@@ -40,7 +40,7 @@ public class BaseTest {
 //            driver.set(new FirefoxDriver());
             FirefoxOptions options = new FirefoxOptions();
             //options.setBinary("/usr/local/bin/geckodriver");
-            System.setProperty("webdriver.firefox.bin", "/src/main/resources/geckodriver");
+            System.setProperty("webdriver.firefox.bin", "/src/main/resources/drivers/geckodriver");
            // options.setBinary("/src/main/resources/geckodriver");
             driver.set(new FirefoxDriver(options));
         }
