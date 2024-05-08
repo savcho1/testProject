@@ -40,7 +40,8 @@ public class BaseTest {
 //            driver.set(new FirefoxDriver());
             FirefoxOptions options = new FirefoxOptions();
             //options.setBinary("/usr/local/bin/geckodriver");
-            options.setBinary("/src/main/resources/geckodriver");
+            System.setProperty("webdriver.firefox.bin", "/src/main/resources/geckodriver");
+           // options.setBinary("/src/main/resources/geckodriver");
             driver.set(new FirefoxDriver(options));
         }
         else {
