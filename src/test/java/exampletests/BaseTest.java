@@ -12,6 +12,7 @@ import org.testng.annotations.Parameters;
 import org.testng.reporters.jq.Main;
 import pageobjects.BasePage;
 import pageobjects.Page;
+import java.io.File;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -28,21 +29,27 @@ public class BaseTest {
     @Parameters(value= {"browser"})
     public void setUpBrowser(String browser){
         if(browser.equals("chrome")){
-            ChromeOptions options = new ChromeOptions();
+            //ChromeOptions options = new ChromeOptions();
           //  options.setBinary("/usr/local/bin/chromedriver");
-            options.setBinary("/var/jenkins_home/workspace/First_job/src/test/resources/drivers/chromedriver");
-            driver.set(new ChromeDriver(options));
+            //options.setBinary("/var/jenkins_home/workspace/First_job/src/test/resources/drivers/chromedriver");
+            String chromeDriverPath = "src" + File.separator + "main" + File.separator + "resources" + File.separator + "drivers" + File.separator + "chromedriver";
+            System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+
+            driver.set(new ChromeDriver());
 //            WebDriverManager.chromedriver().setup();
 //            driver.set(new ChromeDriver());
         }
         else if(browser.equals("ff")){
 //            WebDriverManager.firefoxdriver().setup();
 //            driver.set(new FirefoxDriver());
-            FirefoxOptions options = new FirefoxOptions();
+            //FirefoxOptions options = new FirefoxOptions();
             //options.setBinary("/usr/local/bin/geckodriver");
-            System.setProperty("webdriver.firefox.bin", "\\testProject\\src\\main\\resources\\drivers\\linux\\geckodriver");
+            //System.setProperty("webdriver.firefox.bin", "\\testProject\\src\\main\\resources\\drivers\\linux\\geckodriver");
            // options.setBinary("/src/main/resources/geckodriver");
-            driver.set(new FirefoxDriver(options));
+            String geckoDriverPath = "src" + File.separator + "main" + File.separator + "resources" + File.separator + "drivers" + File.separator + "geckodriver";
+            System.setProperty("webdriver.gecko.driver", geckoDriverPath);
+
+            driver.set(new FirefoxDriver());
         }
         else {
             System.out.println("No browsers to set up");
