@@ -5,14 +5,21 @@
     <test name="Chrome Tests" parallel="methods" thread-count="2">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name = "exampletests.LoginTest" />
+            <class name = "ui.exampletests.LoginTest" />
         </classes>
     </test> <!-- First Test -->
 
     <test name="FF" parallel="methods" thread-count="2">
         <parameter name="browser" value="ff"/>
         <classes>
-            <class name = "exampletests.LoginTest" />
+            <class name = "ui.exampletests.LoginTest" />
         </classes>
-    </test> <!-- Second Test -->
+    </test>
+
+    <test name="API test" parallel="methods" thread-count="2">
+        <classes>
+            <class name = "api.ApiTest" />
+        </classes>
+    </test>
+    <!-- Second Test -->
 </suite>

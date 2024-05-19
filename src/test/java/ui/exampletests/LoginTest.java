@@ -1,16 +1,17 @@
-package exampletests;
+package ui.exampletests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pageobjects.HomePage;
-import pageobjects.LoginPage;
+import ui.pageobjects.HomePage;
+import ui.pageobjects.LoginPage;
 
-public class LoginTest extends BaseTest{
+public class LoginTest extends BaseUiTest {
 
     @Test
     public void verifyLoginPageTitleTest(){
         String title = page.getInstance(LoginPage.class).getLoginPageTitle();
         Assert.assertEquals(title, "HubSpot Login and Sign in");
+        logger.info("Hello World!");
     }
 
     @Test
